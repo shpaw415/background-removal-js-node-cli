@@ -1,12 +1,16 @@
 # Source files
 index.ts
+version.ts
 tsconfig.json
+update-version.js
 
 # Development files
 .git
 .gitignore
 node_modules
 bun.lock
+package-lock.json
+PUBLISHING.md
 
 # Test files
 test/

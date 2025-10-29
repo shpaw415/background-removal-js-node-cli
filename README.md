@@ -131,11 +131,13 @@ npm start
 To publish this package to npm:
 
 1. **Login to npm** (first time only):
+
    ```bash
    npm login
    ```
 
 2. **Update version** (choose one):
+
    ```bash
    npm version patch  # 1.0.0 -> 1.0.1
    npm version minor  # 1.0.0 -> 1.1.0

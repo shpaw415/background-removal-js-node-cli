@@ -7,17 +7,14 @@ import {
 } from "@imgly/background-removal-node";
 import logUpdate from "log-update";
 import fs from "fs";
-
-const packageJson = JSON.parse(
-  fs.readFileSync("./package.json", "utf-8")
-) as typeof import("./package.json");
+import { VERSION } from "./version";
 
 const program = new Command();
 
 program
   .name("background-removal-js-node-cli")
   .description("CLI tool for background and foreground removal")
-  .version(packageJson.version);
+  .version(VERSION);
 
 type RmbgOptions = {
   input: string;

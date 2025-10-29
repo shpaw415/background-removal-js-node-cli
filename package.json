@@ -8,6 +8,8 @@
     "rmbg-cli": "./dist/index.js"
   },
   "scripts": {
+    "update-version": "node update-version.js",
+    "prebuild": "npm run update-version",
     "build": "tsc",
     "build:bun": "bun build --outfile=dist/cli.js --target=node index.ts",
     "start": "node dist/index.js",
