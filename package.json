@@ -1,11 +1,56 @@
 {
   "name": "background-removal-js-node-cli",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
+  "version": "1.0.0",
+  "description": "CLI tool for removing backgrounds and foregrounds from images using AI",
+  "main": "dist/index.js",
+  "bin": {
+    "background-removal-cli": "./dist/index.js",
+    "rmbg-cli": "./dist/index.js"
   },
-  "peerDependencies": {
+  "scripts": {
+    "build": "tsc",
+    "build:bun": "bun build --outfile=dist/cli.js --target=node index.ts",
+    "start": "node dist/index.js",
+    "dev": "bun run index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "background-removal",
+    "image-processing",
+    "ai",
+    "cli",
+    "remove-background",
+    "image-editing",
+    "foreground-removal",
+    "imgly"
+  ],
+  "author": "shpaw415",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shpaw415/background-removal-js-node-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shpaw415/background-removal-js-node-cli/issues"
+  },
+  "homepage": "https://github.com/shpaw415/background-removal-js-node-cli#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@imgly/background-removal-node": "^1.4.5",
+    "commander": "^14.0.1",
+    "log-update": "^7.0.1",
+    "sharp": "^0.34.4"
   }
 }

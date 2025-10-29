@@ -1,0 +1,26 @@
+# Source files
+index.ts
+tsconfig.json
+
+# Development files
+.git
+.gitignore
+node_modules
+bun.lock
+
+# Test files
+test/
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts (keep only what's in files array)
+index.js
