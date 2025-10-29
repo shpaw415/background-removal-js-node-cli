@@ -1,6 +1,6 @@
 {
   "name": "background-removal-js-node-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for removing backgrounds and foregrounds from images using AI",
   "main": "dist/index.js",
   "bin": {
@@ -11,7 +11,7 @@
     "update-version": "node update-version.js",
     "prebuild": "npm run update-version",
     "build": "tsc",
-    "build:bun": "bun build --outfile=dist/cli.js --target=node index.ts",
+    "build:bun": "bun build.ts",
     "start": "node dist/index.js",
     "dev": "bun run index.ts",
     "prepublishOnly": "npm run build"
