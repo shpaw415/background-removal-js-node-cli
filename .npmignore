@@ -28,3 +28,4 @@ Thumbs.db
 
 # Build artifacts (keep only what's in files array)
 index.js
+test

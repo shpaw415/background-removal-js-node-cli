@@ -8,15 +8,21 @@ import {
 import logUpdate from "log-update";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 import { VERSION } from "./version";
 
 // Get the directory where this script is located
 const getPublicPath = () => {
   try {
     // For CommonJS (compiled)
-    if (typeof __dirname !== 'undefined') {
-      const distPath = path.join(__dirname, "..", "node_modules", "@imgly", "background-removal-node", "dist");
+    if (typeof __dirname !== "undefined") {
+      const distPath = path.join(
+        __dirname,
+        "..",
+        "node_modules",
+        "@imgly",
+        "background-removal-node",
+        "dist"
+      );
       // Convert to file:// URI
       return `file://${distPath}/`;
     }
@@ -73,17 +79,17 @@ program
   )
   .action(async (options: RmbgOptions) => {
     const inputBuffer = fs.readFileSync(options.input);
-    
+
     // Determine MIME type from file extension
     const ext = path.extname(options.input).toLowerCase();
     const mimeTypes: Record<string, string> = {
-      '.jpg': 'image/jpeg',
-      '.jpeg': 'image/jpeg',
-      '.png': 'image/png',
-      '.webp': 'image/webp',
+      ".jpg": "image/jpeg",
+      ".jpeg": "image/jpeg",
+      ".png": "image/png",
+      ".webp": "image/webp",
     };
-    const mimeType = mimeTypes[ext] || 'image/jpeg';
-    
+    const mimeType = mimeTypes[ext] || "image/jpeg";
+
     const inputImage = new Blob([inputBuffer], { type: mimeType });
 
     const frames = ["-", "\\", "|", "/"];
@@ -153,17 +159,17 @@ program
   )
   .action(async (options: RmbgOptions) => {
     const inputBuffer = fs.readFileSync(options.input);
-    
+
     // Determine MIME type from file extension
     const ext = path.extname(options.input).toLowerCase();
     const mimeTypes: Record<string, string> = {
-      '.jpg': 'image/jpeg',
-      '.jpeg': 'image/jpeg',
-      '.png': 'image/png',
-      '.webp': 'image/webp',
+      ".jpg": "image/jpeg",
+      ".jpeg": "image/jpeg",
+      ".png": "image/png",
+      ".webp": "image/webp",
     };
-    const mimeType = mimeTypes[ext] || 'image/jpeg';
-    
+    const mimeType = mimeTypes[ext] || "image/jpeg";
+
     const inputImage = new Blob([inputBuffer], { type: mimeType });
 
     const frames = ["-", "\\", "|", "/"];
